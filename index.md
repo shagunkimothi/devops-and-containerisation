@@ -65,6 +65,9 @@ A DevOps-oriented comparison between Virtual Machines and Containers using Ubunt
 Covers Docker fundamentals including image pulling, container execution with port mapping, service verification, port conflict handling, and full container lifecycle management — reflecting real-world container deployment workflows.
 
 
+### [Experiment 3 — Deploying NGINX Using Different Base Images and Comparing Image Layers](./lab/exp3/README.md)
+
+This lab demonstrates how NGINX can be deployed using different Docker base images and analyzes how base OS choices affect image size, layers, and efficiency. It highlights the practical trade-offs between official, Ubuntu-based, and Alpine-based containers in real-world DevOps environments.
 
 
 ---
@@ -162,4 +165,3 @@ making this repository suitable for **academic evaluation** as well as **portfol
 This repository is not just a lab submission —  
 it is a **foundation for real DevOps engineering practices**.
 
-Build it. Improve it. Ship it. 🚀
