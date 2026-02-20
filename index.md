@@ -165,3 +165,6 @@ making this repository suitable for **academic evaluation** as well as **portfol
 This repository is not just a lab submission —  
 it is a **foundation for real DevOps engineering practices**.
 
+## Repository Link
+
+[View the Complete Repository on GitHub](https://github.com/shagunkimothi/devops-and-containerisation)
