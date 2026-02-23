@@ -47,7 +47,8 @@ Containers provide lightweight, fast, and portable environments compared to trad
 docker pull nginx
 ```
 Downloads the official nginx web server image.
-
+#### 📸 Pulling and Running nginx Container
+![Docker nginx Deployment](images/01-docker-pull-run-ps.png)
 ---
 
 ### Step 2 — Run Container with Port Mapping
@@ -61,7 +62,8 @@ docker run -d -p 8080:80 nginx
 | nginx | Image name |
 
 Now open: **http://localhost:8080**
-
+#### 📸 Accessing nginx in Browser (localhost:8080)
+![Nginx Browser Output](images/02-nginx-browser-output.png)
 ---
 
 ### Step 3 — Verify Running Containers
@@ -83,7 +85,8 @@ docker stop <container_id>
 ```bash
 docker rm <container_id>
 ```
-
+#### 📸 Successful Container & Image Removal
+![Docker Cleanup Success](images/04-docker-successful-image-removal.png)
 ---
 
 ### Step 6 — Remove Docker Image
@@ -97,7 +100,8 @@ docker rmi nginx
 - Docker prevents multiple containers from using the same host port.
 - Images cannot be deleted if containers reference them.
 - Port mapping enables browser access.
-
+#### 📸 Port Conflict Demonstration & Cleanup
+![Docker Port Conflict](images/03-docker-port-conflict-and-cleanup.png)
 ---
 
 ## Results

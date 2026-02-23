@@ -81,6 +81,12 @@ docker run -d --network my_overlay --name app2 alpine sleep 3600
 docker exec app1 ping app2
 ```
 
+
+### Screenshots of commands
+![Image](./1.png)
+
+![Image](./2.png)
+
 **✅ Result**
 
 Containers successfully communicated using Docker's internal **DNS resolution**.

@@ -19,8 +19,33 @@
 
 ## About This Repository
 
-This repository serves as the **master lab repository** for the subject  
+This repository serves as the **master lab and class  repository** for the subject  
 **Containerization and DevOps**.
+
+
+# 📚 CLASS SESSIONS
+
+## 📅 January
+
+- [22 January](class/22jan/README.md)
+- [23 January](class/23jan/README.md)
+- [27 January](class/27jan/README.md)
+- [28 January](class/28jan/README.md)
+
+---
+
+## 📅 February
+
+- [4 February](class/4feb/README.md)
+- [5 February](class/5feb/README.md)
+- [6 February](class/6feb/README.md)
+- [10 February](class/10feb/README.md)
+- [11 February](class/11feb/README.md)
+- [12 February](class/12feb/README.md)
+- [18 February](class/18feb/README.md)
+- [20 February](class/20feb/README.md)
+
+---
 
 Each experiment is organized in its **own folder**, containing:
 - Experiment-specific source files
@@ -50,11 +75,9 @@ This lab repository demonstrates **hands-on implementation** of:
 
 ---
 
-
 ## Experiments Performed
 
-### ### [Experiment 1 — Virtual Machines vs Containers](./lab/exp1/README.md)
-
+### [Experiment 1 — Virtual Machines vs Containers](./lab/exp1/README.md)
 
 A DevOps-oriented comparison between Virtual Machines and Containers using Ubuntu, VirtualBox, Vagrant, Docker, and Nginx. Demonstrates infrastructure provisioning, VM-based service deployment, containerized application execution, and architectural differences in resource usage and isolation.
 
@@ -64,11 +87,17 @@ A DevOps-oriented comparison between Virtual Machines and Containers using Ubunt
 
 Covers Docker fundamentals including image pulling, container execution with port mapping, service verification, port conflict handling, and full container lifecycle management — reflecting real-world container deployment workflows.
 
+---
 
 ### [Experiment 3 — Deploying NGINX Using Different Base Images and Comparing Image Layers](./lab/exp3/README.md)
 
 This lab demonstrates how NGINX can be deployed using different Docker base images and analyzes how base OS choices affect image size, layers, and efficiency. It highlights the practical trade-offs between official, Ubuntu-based, and Alpine-based containers in real-world DevOps environments.
 
+---
+
+### [Experiment 4 — Docker Optimization, Inspection & Publishing](./lab/exp4/README.md)
+
+Demonstrates advanced Docker concepts including multi-stage builds, image inspection, history analysis, multi-tagging strategies, publishing to Docker Hub, and comparing cached vs no-cache builds using Flask and Node.js applications.
 
 ---
 
@@ -116,10 +145,10 @@ By completing all experiments in this repository, the learner will be able to:
 
 ```bash
 # Clone repository
-git clone https://github.com/<your-username>/containerization-and-devops-lab.git
+git clone https://github.com/shagunkimothi/devops-and-containerisation.git
 
 # Navigate to an experiment
-cd experiment-01-vm-vs-container
+cd lab/exp4
 
 # Read experiment-specific documentation
 cat README.md
@@ -153,7 +182,7 @@ making this repository suitable for **academic evaluation** as well as **portfol
 
 ## Author
 
-**Name:** Shagun kimothi
+**Name:** Shagun Kimothi  
 **Program:** B.Tech Computer Science Engineering  
 **Specialization:** Cloud Computing & Virtualization Technology  
 **Focus Areas:** DevOps · Cloud · Automation · Linux
@@ -164,6 +193,8 @@ making this repository suitable for **academic evaluation** as well as **portfol
 
 This repository is not just a lab submission —  
 it is a **foundation for real DevOps engineering practices**.
+
+---
 
 ## Repository Link
 

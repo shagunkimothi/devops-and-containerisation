@@ -130,6 +130,8 @@ This generates a Vagrantfile which defines:
 - Base OS image
 - Provider (VirtualBox)
 - Networking and provisioning behavior
+#### 📸 Vagrant Initialization
+![Vagrant Init](01-vagrant-init.png)
 
 ### Step 4: Provision and Boot the VM
 
@@ -151,6 +153,8 @@ vagrant ssh
 ```
 
 This opens a secure terminal session into the Ubuntu VM.
+#### 📸 Ubuntu VM Login
+![Ubuntu VM Login](02-ubuntu-vm-login.png)
 
 ### Deploying Nginx inside the Virtual Machine
 
@@ -159,13 +163,17 @@ This opens a secure terminal session into the Ubuntu VM.
 ```bash
 sudo apt update
 ```
-
+#### 📸 Updating Packages
+![APT Update](03-apt-update.png)
 #### Install Nginx
 
 ```bash
 sudo apt install -y nginx
 ```
+#### 📸 Installing Nginx
+![Nginx Install](04-nginx-install.png)
 
+![Nginx Installation Progress](05-nginx-install-progress.png)
 #### Start Nginx Service
 
 ```bash
@@ -177,6 +185,8 @@ sudo systemctl start nginx
 ```bash
 curl localhost
 ```
+#### 📸 Nginx Running & Verification
+![Nginx Running](06-nginx-running.png)
 
 Successful HTML output confirms the service is running.
 
@@ -208,6 +218,9 @@ Containers allow applications to run consistently across environments, eliminati
 sudo apt update
 sudo apt install -y docker.io
 ```
+#### 📸 Installing Docker
+![Docker Install](07-docker-install.png)
+
 
 ### Step 2: Start and Enable Docker
 
@@ -215,12 +228,16 @@ sudo apt install -y docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
 ```
-
+#### 📸 Docker Service Running
+![Docker Service](08-docker-service-running.png)
 ### Step 3: Configure Docker Permissions
 
 ```bash
 sudo usermod -aG docker vagrant
 ```
+#### 📸 Adding User to Docker Group
+![Docker Group Permission](09-add-user-to-docker-group.png)
+
 
 Apply changes:
 
@@ -240,6 +257,8 @@ docker --version
 ```bash
 docker run -d -p 8080:80 --name nginx-container nginx
 ```
+#### 📸 Running Nginx Container
+![Docker Run Attempt](10-docker-container-run-attempt.png)
 
 Explanation:
 
@@ -272,6 +291,8 @@ docker rm nginx-container
 exit
 vagrant halt
 ```
+#### 📸 Cleanup & VM Shutdown
+![Cleanup](11-cleanup-and-vm-shutdown.png)
 
 ---
 
