@@ -1,7 +1,7 @@
 # CONTAINERIZATION AND DEVOPS THEORY
 
 ## 25 FEBRUARY 2026  
-### Docker Run, Docker Compose & Port Conflict Handling
+### Docker Run, Docker Compose, Port Conflict Handling & Multi-Container Setup
 
 ---
 
@@ -13,6 +13,7 @@ To understand:
 - Using Docker Compose  
 - Handling port conflicts  
 - Viewing logs and managing services  
+- Deploying a multi-container WordPress + MySQL stack  
 
 ---
 
@@ -35,7 +36,7 @@ docker run \
 
 ---
 
-# 🧰 Part 2 — Docker Compose Setup
+# 🧰 Part 2 — Docker Compose Setup (NGINX)
 
 ## 🔹 docker-compose.yml
 
@@ -139,14 +140,140 @@ This stopped and removed containers along with the default network.
 
 ---
 
-# ✅ Conclusion
+# 🌐 Part 3 — WordPress + MySQL Using Docker Compose
 
-In this session, we learned:
+## 📌 Objective
 
-- How to run containers using advanced `docker run` options  
-- How to create and use a `docker-compose.yml` file  
-- How to identify and resolve port conflicts  
-- How to inspect logs and container status  
-- How to properly stop and clean up services  
+To deploy a multi-container WordPress application connected to a MySQL database using Docker Compose.
 
-This experiment demonstrates practical container lifecycle management using Docker and Docker Compose.
+---
+
+## 🔹 docker-compose.yml (Multi-Container Setup)
+
+```yaml
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppass
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - wordpress-network
+
+  wordpress:
+    image: wordpress:latest
+    container_name: wordpress
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppass
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wp_content:/var/www/html/wp-content
+    depends_on:
+      - mysql
+    networks:
+      - wordpress-network
+
+volumes:
+  mysql_data:
+  wp_content:
+
+networks:
+  wordpress-network:
+```
+
+![WordPress Compose File](./6.png)
+
+---
+
+## 🔹 Starting the Multi-Container Application
+
+```bash
+docker-compose up -d
+```
+
+![Compose Up Execution](./7.png)
+
+---
+
+## 🔹 Checking Running Services
+
+```bash
+docker-compose ps
+```
+
+Confirmed both containers are running:
+
+- mysql  
+- wordpress  
+
+![Services Running](./8.png)
+
+---
+
+## 🔹 Viewing Logs
+
+```bash
+docker-compose logs
+```
+
+Verified MySQL initialization and WordPress startup.
+
+![Logs Output](./9.png)
+
+---
+
+## 🔹 Accessing WordPress
+
+Opened browser:
+
+```
+http://localhost:8080
+```
+
+WordPress setup page appeared successfully.
+
+![WordPress Setup Page](./10.png)
+
+---
+
+## 🔹 WordPress Dashboard / Final Output
+
+After configuration, WordPress site loaded successfully.
+
+![WordPress Running](./11.png)
+
+---
+
+# 🧠 Key Concepts Learned
+
+- Docker Compose manages multi-container applications  
+- Service names act as internal DNS (wordpress connects to mysql)  
+- Named volumes provide persistent storage  
+- Custom networks isolate application services  
+- Port conflicts must be handled before deployment  
+- Logs help debug container issues  
+
+---
+
+# ✅ Final Conclusion
+
+This experiment demonstrated:
+
+- Single container deployment using `docker run`  
+- Container orchestration using Docker Compose  
+- Debugging port conflicts  
+- Multi-container application deployment  
+- Networking and volume management in Docker  
+
+This lab provides practical experience in real-world container lifecycle and service orchestration using Docker and Docker Compose.

@@ -44,7 +44,8 @@ This repository serves as the **master lab and class  repository** for the subje
 - [12 February](class/12feb/README.md)
 - [18 February](class/18feb/README.md)
 - [20 February](class/20feb/README.md)
-
+-[25 February](class/25feb/README.md)
+ -[26 February](class/26feb/README.md)
 ---
 
 Each experiment is organized in its **own folder**, containing:
