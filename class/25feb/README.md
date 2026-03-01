@@ -7,9 +7,7 @@
 
 ## 📌 Objective
 
-To understand:
-
-- Running containers with advanced Docker options  
+- Running containers using advanced Docker options  
 - Using Docker Compose  
 - Handling port conflicts  
 - Viewing logs and managing services  
@@ -31,6 +29,8 @@ docker run \
   -d \
   nginx:alpine
 ```
+
+### 📷 Output
 
 ![Docker Run Output](./1.png)
 
@@ -54,7 +54,9 @@ services:
     restart: unless-stopped
 ```
 
-![Compose File Execution](./2.png)
+### 📷 Compose Execution
+
+![Compose Execution](./2.png)
 
 ---
 
@@ -72,6 +74,8 @@ Error received:
 Bind for 0.0.0.0:8080 failed: port is already allocated
 ```
 
+### 📷 Error Screenshot
+
 ![Port Conflict Error](./3.png)
 
 ---
@@ -82,7 +86,7 @@ Bind for 0.0.0.0:8080 failed: port is already allocated
 docker ps
 ```
 
-Observed that another container was already using port 8080.
+### 📷 Running Containers
 
 ![Running Containers](./4.png)
 
@@ -90,63 +94,18 @@ Observed that another container was already using port 8080.
 
 # 🛠 Resolving Port Conflict
 
-Stopped and removed the conflicting container:
-
 ```bash
 docker rm -f my-nginx
-```
-
-Then started Docker Compose again:
-
-```bash
 docker-compose up -d
 ```
+
+### 📷 Successful Start
 
 ![Compose Successful Start](./5.png)
 
 ---
 
-# 📜 Viewing Logs
-
-```bash
-docker-compose logs
-```
-
-Logs confirmed that NGINX started successfully.
-
----
-
-# 📊 Checking Service Status
-
-```bash
-docker-compose ps
-```
-
-Confirmed that the service was running on:
-
-```
-0.0.0.0:8080 -> 80/tcp
-```
-
----
-
-# 🧹 Stopping Services
-
-```bash
-docker-compose down
-```
-
-This stopped and removed containers along with the default network.
-
----
-
 # 🌐 Part 3 — WordPress + MySQL Using Docker Compose
-
-## 📌 Objective
-
-To deploy a multi-container WordPress application connected to a MySQL database using Docker Compose.
-
----
 
 ## 🔹 docker-compose.yml (Multi-Container Setup)
 
@@ -192,77 +151,119 @@ networks:
   wordpress-network:
 ```
 
+### 📷 WordPress Compose File
+
 ![WordPress Compose File](./6.png)
 
 ---
 
-## 🔹 Starting the Multi-Container Application
+# 🚀 Starting WordPress Stack
 
 ```bash
 docker-compose up -d
 ```
 
+### 📷 Compose Up Output
+
 ![Compose Up Execution](./7.png)
 
 ---
 
-## 🔹 Checking Running Services
+# 📊 Checking Running Services
 
 ```bash
 docker-compose ps
 ```
 
-Confirmed both containers are running:
-
-- mysql  
-- wordpress  
+### 📷 Services Running
 
 ![Services Running](./8.png)
 
 ---
 
-## 🔹 Viewing Logs
+# 📜 Viewing Logs
 
 ```bash
 docker-compose logs
 ```
 
-Verified MySQL initialization and WordPress startup.
+### 📷 Logs Output
 
-![Logs Output](./9.png)
+![Logs Output](./11.png)
 
 ---
 
-## 🔹 Accessing WordPress
+# 🌍 Accessing WordPress
 
-Opened browser:
+Open in browser:
 
 ```
 http://localhost:8080
 ```
 
-WordPress setup page appeared successfully.
+### 📷 WordPress Setup Page
 
-![WordPress Setup Page](./10.png)
+![WordPress Setup](./10.png)
 
 ---
 
-## 🔹 WordPress Dashboard / Final Output
+# 🎯 WordPress Dashboard
 
-After configuration, WordPress site loaded successfully.
+After completing setup:
 
-![WordPress Running](./11.png)
+### 📷 Final Output
+
+![WordPress Running](./9.png)
+
+---
+
+# 🚀 Key Advantages of Docker Compose
+
+## 1️⃣ Simplicity
+
+Instead of multiple `docker run` commands:
+
+```bash
+docker-compose up -d
+```
+
+---
+
+## 2️⃣ Reproducibility
+
+- Same configuration everywhere  
+- No forgotten flags  
+- Consistent environment  
+
+---
+
+## 3️⃣ Declarative Configuration
+
+- Define what you want  
+- Self-documenting  
+- Easy to modify  
+
+---
+
+## 4️⃣ Lifecycle Management
+
+```bash
+docker-compose up    # Start
+docker-compose down  # Stop & clean
+docker-compose logs  # View logs
+docker-compose ps    # Check status
+```
 
 ---
 
 # 🧠 Key Concepts Learned
 
 - Docker Compose manages multi-container applications  
-- Service names act as internal DNS (wordpress connects to mysql)  
+- Service names act as internal DNS  
 - Named volumes provide persistent storage  
-- Custom networks isolate application services  
-- Port conflicts must be handled before deployment  
-- Logs help debug container issues  
+- Custom networks isolate services  
+- Port conflicts must be handled properly  
+- Logs assist debugging  
 
 ---
 
@@ -270,10 +271,10 @@ After configuration, WordPress site loaded successfully.
 
 This experiment demonstrated:
 
-- Single container deployment using `docker run`  
+- Single-container deployment using `docker run`  
 - Container orchestration using Docker Compose  
 - Debugging port conflicts  
-- Multi-container application deployment  
-- Networking and volume management in Docker  
+- Multi-container WordPress deployment  
+- Networking and volume management  
 
-This lab provides practical experience in real-world container lifecycle and service orchestration using Docker and Docker Compose.
+This lab provides practical exposure to real-world container lifecycle management using Docker and Docker Compose.

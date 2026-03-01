@@ -82,10 +82,7 @@ docker exec app1 ping app2
 ```
 
 
-### Screenshots of commands
-![Image](./1.png)
 
-![Image](./2.png)
 
 **✅ Result**
 
@@ -146,6 +143,12 @@ docker run -d \
 
 ---
 
+### Screenshots of commands
+![Image](./1.png)
+
+![Image](./2.png)
+
+---
 ## 🔹 What You Practiced
 
 - ✅ Swarm Manager setup

@@ -1,4 +1,4 @@
-# Containerization & DevOps Lab  
+# Containerization & DevOps Lab
 
 > *Master Repository for All Experiments*
 
@@ -10,121 +10,71 @@
 </p>
 
 ---
+
 <p align="center">
   <b>Name:</b> Shagun Kimothi<br/>
-  <b>SapID:</b> 500120283<br/>
-  <b>Course:</b> BTech. CSE (CCVT) <br/>
-  <b>Batch:</b> 2 <br/>
+  <b>SAP ID:</b> 500120283<br/>
+  <b>Program:</b> BTech. CSE (CCVT)<br/>
+  <b>Batch:</b> 2<br/>
 </p>
+
+---
 
 ## About This Repository
 
-This repository serves as the **master lab and class  repository** for the subject  
-**Containerization and DevOps**.
-
-
-# 📚 CLASS SESSIONS
-
-## 📅 January
-
-- [22 January](class/22jan/README.md)
-- [23 January](class/23jan/README.md)
-- [27 January](class/27jan/README.md)
-- [28 January](class/28jan/README.md)
+This repository serves as the **master lab and class repository** for the subject **Containerization and DevOps**. It follows real-world DevOps repository structure where infrastructure, automation, and documentation coexist in a clean, scalable manner.
 
 ---
 
-## 📅 February
+## Class Sessions
 
-- [4 February](class/4feb/README.md)
-- [5 February](class/5feb/README.md)
-- [6 February](class/6feb/README.md)
-- [10 February](class/10feb/README.md)
-- [11 February](class/11feb/README.md)
-- [12 February](class/12feb/README.md)
-- [18 February](class/18feb/README.md)
-- [20 February](class/20feb/README.md)
--[25 February](class/25feb/README.md)
- -[26 February](class/26feb/README.md)
----
+### January
 
-Each experiment is organized in its **own folder**, containing:
-- Experiment-specific source files
-- Individual README documentation
-- Commands, configurations, and outputs
-- Observations and results
+| Date | Link |
+|---|---|
+| 22 January | [View Notes](class/22jan/README.md) |
+| 23 January | [View Notes](class/23jan/README.md) |
+| 27 January | [View Notes](class/27jan/README.md) |
+| 28 January | [View Notes](class/28jan/README.md) |
 
-This structure reflects **real-world DevOps repositories**, where infrastructure,
-automation, and documentation coexist in a clean, scalable manner.
+### February
 
----
-
-## Why This Repository Exists
-
-Modern software systems require:
-- Fast deployment
-- Scalability
-- Automation
-- Reproducibility
-
-This lab repository demonstrates **hands-on implementation** of:
-- Infrastructure as Code (IaC)
-- Virtualization vs Containerization
-- Linux system administration
-- Docker-based application deployment
-- DevOps best practices
+| Date | Link |
+|---|---|
+| 4 February | [View Notes](class/4feb/README.md) |
+| 5 February | [View Notes](class/5feb/README.md) |
+| 6 February | [View Notes](class/6feb/README.md) |
+| 10 February | [View Notes](class/10feb/README.md) |
+| 11 February | [View Notes](class/11feb/README.md) |
+| 12 February | [View Notes](class/12feb/README.md) |
+| 18 February | [View Notes](class/18feb/README.md) |
+| 20 February | [View Notes](class/20feb/README.md) |
+| 25 February | [View Notes](class/25feb/README.md) |
+| 26 February | [View Notes](class/26feb/README.md) |
 
 ---
 
-## Experiments Performed
+## Experiments
 
-### [Experiment 1 — Virtual Machines vs Containers](./lab/exp1/README.md)
+Each experiment is organized in its own folder containing experiment-specific source files, individual README documentation, commands, configurations, outputs, and observations.
 
-A DevOps-oriented comparison between Virtual Machines and Containers using Ubuntu, VirtualBox, Vagrant, Docker, and Nginx. Demonstrates infrastructure provisioning, VM-based service deployment, containerized application execution, and architectural differences in resource usage and isolation.
-
----
-
-### [Experiment 2 — Docker Installation & Container Lifecycle](./lab/exp2/README.md)
-
-Covers Docker fundamentals including image pulling, container execution with port mapping, service verification, port conflict handling, and full container lifecycle management — reflecting real-world container deployment workflows.
-
----
-
-### [Experiment 3 — Deploying NGINX Using Different Base Images and Comparing Image Layers](./lab/exp3/README.md)
-
-This lab demonstrates how NGINX can be deployed using different Docker base images and analyzes how base OS choices affect image size, layers, and efficiency. It highlights the practical trade-offs between official, Ubuntu-based, and Alpine-based containers in real-world DevOps environments.
+| # | Experiment | Link |
+|---|---|---|
+| 1 | Virtual Machines vs Containers | [View](lab/exp1/README.md) |
+| 2 | Docker Installation & Container Lifecycle | [View](lab/exp2/README.md) |
+| 3 | Deploying NGINX Using Different Base Images | [View](lab/exp3/README.md) |
+| 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/README.md) |
+| 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/README.md) |
 
 ---
 
-### [Experiment 4 — Docker Optimization, Inspection & Publishing](./lab/exp4/README.md)
-
-Demonstrates advanced Docker concepts including multi-stage builds, image inspection, history analysis, multi-tagging strategies, publishing to Docker Hub, and comparing cached vs no-cache builds using Flask and Node.js applications.
-
----
-
-## Technologies & Tools Used
-
+## Technologies & Tools
 ```text
-Operating Systems:
-- Ubuntu Linux
-- Windows (Host)
-
-Virtualization:
-- Oracle VirtualBox
-- Vagrant
-
-Containerization:
-- Docker Engine
-- Docker CLI
-
-Networking & Services:
-- Nginx
-
-DevOps Concepts:
-- Infrastructure as Code (IaC)
-- Automation
-- CI/CD
-- Cloud-Native Architecture
+Operating Systems       Ubuntu Linux, Windows (Host)
+Virtualization          Oracle VirtualBox, Vagrant
+Containerization        Docker Engine, Docker CLI
+Networking & Services   Nginx, PostgreSQL, Redis
+DevOps Concepts         IaC, Automation, CI/CD, Cloud-Native Architecture
 ```
 
 ---
@@ -137,19 +87,19 @@ By completing all experiments in this repository, the learner will be able to:
 - Deploy applications in isolated environments
 - Automate infrastructure provisioning
 - Use Docker for container-based deployment
-- Follow DevOps-style repository organization
-- Apply concepts used in real-world DevOps roles
+- Manage persistent data, environment variables, and networks
+- Monitor containers using Docker stats, logs, and events
+- Follow DevOps-style repository organization and practices
 
 ---
 
 ## How to Use This Repository
-
 ```bash
 # Clone repository
 git clone https://github.com/shagunkimothi/devops-and-containerisation.git
 
 # Navigate to an experiment
-cd lab/exp4
+cd lab/exp5
 
 # Read experiment-specific documentation
 cat README.md
@@ -157,43 +107,22 @@ cat README.md
 
 ---
 
-## DevOps Mindset Demonstrated
-
-This repository reflects:
-- Modular design
-- Clear documentation
-- Automation-first thinking
-- Scalability
-- Industry-aligned practices
-
-The structure and workflow mirror professional DevOps projects,
-making this repository suitable for **academic evaluation** as well as **portfolio use**.
-
----
-
 ## Future Enhancements
 
-- GitHub Actions CI pipelines
-- Docker image versioning
-- Kubernetes basics
+- GitHub Actions CI/CD pipelines
+- Docker image versioning strategies
+- Kubernetes basics and deployment
 - Cloud deployment (AWS / Azure / GCP)
-- Monitoring & logging integration
+- Monitoring and logging integration (Prometheus, Grafana)
 
 ---
 
 ## Author
 
-**Name:** Shagun Kimothi  
-**Program:** B.Tech Computer Science Engineering  
-**Specialization:** Cloud Computing & Virtualization Technology  
+**Name:** Shagun Kimothi
+**Program:** B.Tech Computer Science Engineering
+**Specialization:** Cloud Computing & Virtualization Technology
 **Focus Areas:** DevOps · Cloud · Automation · Linux
-
----
-
-## Final Note
-
-This repository is not just a lab submission —  
-it is a **foundation for real DevOps engineering practices**.
 
 ---
 
