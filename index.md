@@ -68,6 +68,14 @@ Each experiment is organized in its own folder containing experiment-specific so
 
 ---
 
+## Projects
+
+| # | Project | Description | Link |
+|---|---|---|---|
+| 1 | Containerized Web App with PostgreSQL | FastAPI + PostgreSQL + Docker Compose + Macvlan/Ipvlan networking | [View](project1/README.md) |
+
+---
+
 ## Technologies & Tools
 ```text
 Operating Systems       Ubuntu Linux, Windows (Host)
@@ -102,6 +110,10 @@ git clone https://github.com/shagunkimothi/devops-and-containerisation.git
 cd lab/exp5
 
 # Read experiment-specific documentation
+cat README.md
+
+# Navigate to project
+cd project1
 cat README.md
 ```
 
