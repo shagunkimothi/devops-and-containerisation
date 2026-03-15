@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ContainerApp — Record Ledger</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0a0c10;--surface:#111418;--border:#1e2530;--accent:#00e5a0;
+    --accent2:#005cff;--warn:#ff4d6d;--text:#c9d1d9;--muted:#484f58;
+    --mono:'JetBrains Mono',monospace;--sans:'Syne',sans-serif;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh;overflow-x:hidden}
+  body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,229,160,.015) 2px,rgba(0,229,160,.015) 4px);pointer-events:none;z-index:999}
+  header{border-bottom:1px solid var(--border);padding:1.25rem 2rem;display:flex;align-items:center;gap:1rem;position:sticky;top:0;background:rgba(10,12,16,.92);backdrop-filter:blur(12px);z-index:100}
+  .logo-box{width:36px;height:36px;background:var(--accent);display:grid;place-items:center;clip-path:polygon(0 0,100% 0,100% 75%,75% 100%,0 100%)}
+  .brand{font-family:var(--sans);font-size:1.1rem;font-weight:800;letter-spacing:-.02em;color:#fff}
+  .brand span{color:var(--accent)}
+  .pill{margin-left:auto;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);padding:.25rem .65rem;border-radius:2px}
+  #health-dot{width:8px;height:8px;border-radius:50%;background:var(--muted);transition:background .4s}
+  #health-dot.ok{background:var(--accent);box-shadow:0 0 0 4px rgba(0,229,160,.15);animation:pulse 2s infinite}
+  #health-dot.err{background:var(--warn)}
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(0,229,160,.15)}50%{box-shadow:0 0 0 8px rgba(0,229,160,.03)}}
+  main{display:grid;grid-template-columns:380px 1fr;height:calc(100vh - 65px)}
+  aside{border-right:1px solid var(--border);padding:2rem 1.75rem;overflow-y:auto;display:flex;flex-direction:column;gap:2rem}
+  .panel-title{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+  .field{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem}
+  .field label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .field input,.field textarea{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--mono);font-size:.85rem;padding:.65rem .85rem;border-radius:3px;outline:none;resize:none;transition:border-color .2s,box-shadow .2s}
+  .field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,229,160,.08)}
+  .field textarea{height:90px}
+  .btn{width:100%;background:var(--accent);color:#000;border:none;padding:.75rem 1rem;font-family:var(--mono);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:3px;transition:opacity .2s,transform .1s}
+  .btn:hover{opacity:.88}.btn:active{transform:scale(.98)}.btn:disabled{opacity:.4;cursor:not-allowed}
+  .status-bar{font-size:.72rem;color:var(--muted);padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:3px;min-height:2.2rem;display:flex;align-items:center;gap:.5rem;transition:color .3s}
+  .status-bar.success{color:var(--accent)}.status-bar.error{color:var(--warn)}
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+  .info-card{background:var(--surface);border:1px solid var(--border);border-radius:3px;padding:.75rem}
+  .info-card .label{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+  .info-card .value{font-size:.78rem;color:var(--accent);word-break:break-all}
+  section{padding:2rem;overflow-y:auto;display:flex;flex-direction:column;gap:1.5rem}
+  .section-header{display:flex;align-items:center;justify-content:space-between}
+  #record-count{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:var(--surface);border:1px solid var(--border);padding:.3rem .7rem;border-radius:2px}
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:4px}
+  table{width:100%;border-collapse:collapse;font-size:.8rem}
+  thead{background:var(--surface);border-bottom:1px solid var(--border)}
+  th{text-align:left;padding:.75rem 1rem;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:400}
+  td{padding:.75rem 1rem;border-bottom:1px solid rgba(30,37,48,.6);vertical-align:top;color:var(--text)}
+  tr:last-child td{border-bottom:none}
+  tr:hover td{background:rgba(255,255,255,.02)}
+  td:first-child{color:var(--muted);font-size:.7rem;width:40px}
+  td.name-col{color:#fff;font-weight:600}
+  td.ts-col{color:var(--muted);font-size:.7rem;white-space:nowrap}
+  .empty{text-align:center;padding:4rem 2rem;color:var(--muted);font-size:.8rem;letter-spacing:.05em}
+  ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border);border-radius:10px}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .fade-up{animation:fadeUp .35s ease forwards}
+  @media(max-width:720px){main{grid-template-columns:1fr;height:auto}aside{border-right:none;border-bottom:1px solid var(--border)}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo-box">
+    <svg viewBox="0 0 18 18" fill="none" width="18">
+      <rect x="1" y="1" width="7" height="7" fill="#000"/>
+      <rect x="10" y="1" width="7" height="7" fill="#000"/>
+      <rect x="1" y="10" width="7" height="7" fill="#000"/>
+      <rect x="10" y="10" width="7" height="7" fill="#000"/>
+    </svg>
+  </div>
+  <div class="brand">Container<span>App</span></div>
+  <div style="margin-left:auto;display:flex;align-items:center;gap:.75rem">
+    <div id="health-dot" title="DB health"></div>
+    <span class="pill">Macvlan / Ipvlan</span>
+  </div>
+</header>
+<main>
+  <aside>
+    <div>
+      <p class="panel-title">// Insert Record</p>
+      <div class="field"><label>Name</label><input id="inp-name" type="text" placeholder="e.g. Alice" autocomplete="off"/></div>
+      <div class="field"><label>Message</label><textarea id="inp-msg" placeholder="Your message here…"></textarea></div>
+      <button class="btn" id="btn-submit">→ Submit Record</button>
+      <div style="margin-top:.75rem"><div class="status-bar" id="status">Awaiting input…</div></div>
+    </div>
+    <div>
+      <p class="panel-title">// Network Topology</p>
+      <div class="info-grid">
+        <div class="info-card"><div class="label">Driver</div><div class="value">macvlan</div></div>
+        <div class="info-card"><div class="label">Backend IP</div><div class="value">172.20.0.2</div></div>
+        <div class="info-card"><div class="label">DB IP</div><div class="value">172.20.0.3</div></div>
+        <div class="info-card"><div class="label">Subnet</div><div class="value">172.20.0.0/24</div></div>
+      </div>
+    </div>
+    <div>
+      <p class="panel-title">// API Endpoints</p>
+      <div style="display:flex;flex-direction:column;gap:.4rem;font-size:.72rem">
+        <div style="display:flex;gap:.5rem"><span style="color:var(--accent2);font-weight:700">GET</span><span style="color:var(--muted)">/health</span></div>
+        <div style="display:flex;gap:.5rem"><span style="color:var(--accent2);font-weight:700">GET</span><span style="color:var(--muted)">/records</span></div>
+        <div style="display:flex;gap:.5rem"><span style="color:#f7a541;font-weight:700">POST</span><span style="color:var(--muted)">/records</span></div>
+      </div>
+    </div>
+  </aside>
+  <section>
+    <div class="section-header">
+      <p class="panel-title" style="margin:0">// Record Ledger</p>
+      <span id="record-count">0 rows</span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Name</th><th>Message</th><th>Timestamp</th></tr></thead>
+        <tbody id="records-body">
+          <tr><td colspan="4"><div class="empty"><p>No records yet.<br/>Submit one to get started.</p></div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<script>
+  async function checkHealth(){
+    const dot=document.getElementById('health-dot');
+    try{const r=await fetch('/health');const d=await r.json();dot.className=d.db==='connected'?'ok':'err';}
+    catch{dot.className='err';}
+  }
+  function setStatus(msg,type=''){const el=document.getElementById('status');el.textContent=msg;el.className=`status-bar ${type}`;}
+  function formatDate(iso){const d=new Date(iso);return d.toLocaleString('en-GB',{dateStyle:'short',timeStyle:'medium'});}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  async function loadRecords(){
+    try{
+      const r=await fetch('/records');const rows=await r.json();
+      const tbody=document.getElementById('records-body');
+      document.getElementById('record-count').textContent=`${rows.length} row${rows.length!==1?'s':''}`;
+      if(!rows.length){tbody.innerHTML=`<tr><td colspan="4"><div class="empty"><p>No records yet.<br/>Submit one to get started.</p></div></td></tr>`;return;}
+      tbody.innerHTML=rows.map(row=>`<tr class="fade-up"><td>${row.id}</td><td class="name-col">${esc(row.name)}</td><td>${esc(row.message)}</td><td class="ts-col">${formatDate(row.created_at)}</td></tr>`).join('');
+    }catch(e){setStatus('Failed to fetch records — '+e.message,'error');}
+  }
+  document.getElementById('btn-submit').addEventListener('click',async()=>{
+    const name=document.getElementById('inp-name').value.trim();
+    const message=document.getElementById('inp-msg').value.trim();
+    if(!name||!message){setStatus('⚠ Both fields required.','error');return;}
+    const btn=document.getElementById('btn-submit');btn.disabled=true;setStatus('Sending…');
+    try{
+      const r=await fetch('/records',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,message})});
+      if(!r.ok)throw new Error(r.statusText);
+      document.getElementById('inp-name').value='';document.getElementById('inp-msg').value='';
+      setStatus('✓ Record inserted.','success');await loadRecords();
+    }catch(e){setStatus('✗ Error: '+e.message,'error');}
+    finally{btn.disabled=false;}
+  });
+  checkHealth();loadRecords();setInterval(checkHealth,10000);
+</script>
+</body>
+</html>
