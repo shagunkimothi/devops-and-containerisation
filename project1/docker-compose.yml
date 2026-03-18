@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     image: containerapp-backend:latest
     container_name: containerapp-backend
+    ports:
+      - "8000:8000"
     restart: unless-stopped
     environment:
       DB_HOST: "172.30.0.3"
@@ -32,6 +34,8 @@ services:
       dockerfile: Dockerfile
     image: containerapp-db:latest
     container_name: containerapp-db
+    ports:
+      - "8000:8000"
     restart: unless-stopped
     environment:
       POSTGRES_DB: "${POSTGRES_DB:-appdb}"

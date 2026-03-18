@@ -20,8 +20,9 @@ Containers provide lightweight, fast, and portable environments compared to trad
 ---
 
 ## System Requirements
+
 | Component | Details |
-|-----------|---------|
+|---|---|
 | OS | Windows / Linux / macOS |
 | Software | Docker Desktop |
 | Network | Active Internet connection |
@@ -30,8 +31,9 @@ Containers provide lightweight, fast, and portable environments compared to trad
 ---
 
 ## Docker Concepts Used
+
 | Concept | Explanation |
-|---------|-------------|
+|---|---|
 | Image | Read-only template used to create containers |
 | Container | Running instance of an image |
 | Port Mapping | Connects host port to container port |
@@ -46,35 +48,40 @@ Containers provide lightweight, fast, and portable environments compared to trad
 ```bash
 docker pull nginx
 ```
-Downloads the official nginx web server image.
-#### 📸 Pulling and Running nginx Container
-![Docker nginx Deployment](images/01-docker-pull-run-ps.png)
+
+Downloads the official nginx web server image from Docker Hub.
+
+![Docker nginx Deployment](01-docker-pull-run-ps.png)
+
 ---
 
 ### Step 2 — Run Container with Port Mapping
 ```bash
 docker run -d -p 8080:80 nginx
 ```
+
 | Option | Meaning |
-|--------|---------|
-| -d | Detached mode |
-| -p 8080:80 | Maps host port 8080 → container port 80 |
-| nginx | Image name |
+|---|---|
+| `-d` | Detached mode — runs in background |
+| `-p 8080:80` | Maps host port 8080 → container port 80 |
+| `nginx` | Image name |
 
 Now open: **http://localhost:8080**
-#### 📸 Accessing nginx in Browser (localhost:8080)
-![Nginx Browser Output](images/02-nginx-browser-output.png)
+
+![Nginx Browser Output](02-nginx-browser-output.png)
+
 ---
 
 ### Step 3 — Verify Running Containers
 ```bash
 docker ps
 ```
+
 Displays container ID, image, status, and port mappings.
 
 ---
 
-### 🔹 Step 4 — Stop Container
+### Step 4 — Stop Container
 ```bash
 docker stop <container_id>
 ```
@@ -85,8 +92,7 @@ docker stop <container_id>
 ```bash
 docker rm <container_id>
 ```
-#### 📸 Successful Container & Image Removal
-![Docker Cleanup Success](images/04-docker-successful-image-removal.png)
+
 ---
 
 ### Step 6 — Remove Docker Image
@@ -94,28 +100,38 @@ docker rm <container_id>
 docker rmi nginx
 ```
 
+![Docker Cleanup Success](04-docker-successful-image-removal.png)
+
 ---
 
 ## Observed Behavior
-- Docker prevents multiple containers from using the same host port.
-- Images cannot be deleted if containers reference them.
-- Port mapping enables browser access.
-#### 📸 Port Conflict Demonstration & Cleanup
-![Docker Port Conflict](images/03-docker-port-conflict-and-cleanup.png)
+
+- Docker prevents multiple containers from using the same host port
+- Images cannot be deleted if containers still reference them
+- Port mapping enables browser access from host machine
+
+![Docker Port Conflict](03-docker-port-conflict-and-cleanup.png)
+
 ---
 
 ## Results
+
 The nginx image was pulled, container deployed, verified, stopped, removed, and the image deleted successfully.
 
 ---
 
 ## Conclusion
+
 Docker simplifies application deployment using containers. Compared to VMs, containers start faster, consume fewer resources, and are ideal for cloud-native microservices.
 
 ---
 
 ## Key Takeaways
-- Containers ≠ Virtual Machines
-- Port mapping is essential for accessibility
-- Docker CLI manages full lifecycle
-- Real-world DevOps workflow replicated
+
+| Concept | Learning |
+|---|---|
+| Containers vs VMs | Containers are lightweight and faster to start |
+| Port Mapping | Essential for accessing services from host |
+| Docker Lifecycle | Pull → Run → Verify → Stop → Remove |
+| Port Conflicts | One host port can only be used by one container |
+| Image Deletion | Must remove container before removing image |
