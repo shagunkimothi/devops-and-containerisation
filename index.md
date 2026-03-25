@@ -56,6 +56,9 @@ This repository serves as the **master lab and class repository** for the subjec
 |--- |---|
 |17 March     |  [View Notes](class/17march/README.md) |
 | 18 March    | [View Notes](class/18march/README.md)   |
+|19 March     |[View Notes](class/19%20march/README.md) |
+| 25 March    | [ View Notes](class/25%20march/READEME.md)|
+
 ---
 
 ---
