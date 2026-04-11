@@ -1,0 +1,30 @@
+vversion: '3.8'
+
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: postgres-db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASS=secret
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    networks:
+      - app-net
+
+  backend:
+    image: backend-image:latest # Replace with actual image if different
+    container_name: backend
+    ports:
+      - "8000:8000"
+    networks:
+      - app-net
+    depends_on:
+      - postgres-db
+
+networks:
+  app-net:
+    driver: bridge
+
+volumes:
+  pgdata:

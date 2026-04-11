@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: mysql-persistent
+    environment:
+      MYSQL_ROOT_PASSWORD: labpassword
+      MYSQL_DATABASE: inventory
+    volumes:
+      - db_data:/var/lib/mysql  # This is the named volume
+    restart: always
+
+volumes:
+  db_data:  # Defining the volume at the top level
