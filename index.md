@@ -73,6 +73,8 @@
  | 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/README.md) |
  | 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/README.md) |
  |6| Docker compose|[View](lab/exp6/README.md)
+ |9| Ansible [View](lab/exp9/README.md)
+|10|Sonarqube[View](lab/sonarqube-exp10/README.md)
  ---
  
  ## Projects
