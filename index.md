@@ -78,10 +78,11 @@ Each experiment is organized in its own folder containing experiment-specific so
 | 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/) |
 | 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/) |
 | 6 | Docker Compose | [View](lab/exp6/) |
+|7| CI/CD Demo App| [View](lab/exp7/)|
 | 9 | Ansible | [View](lab/exp9/) |
 | 10 | SonarQube | [View](lab/sonarqube-exp10/) |
 | 11 | Orchestration using Docker Compose and Docker Swarm | [View](lab/exp11/) |
-
+|12|Study and analyse container Orchestration using Kubernets[View](lab/exp12/) |
 ---
 
 ## Projects
