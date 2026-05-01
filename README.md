@@ -65,21 +65,21 @@ This repository serves as the **master lab and class repository** for the subjec
 
 Each experiment is organized in its own folder containing experiment-specific source files, individual README documentation, commands, configurations, outputs, and observations.
 
+| #  | Experiment                                                                 | Link                  |
+|----|----------------------------------------------------------------------------|-----------------------|
+| 1  | Virtual Machines vs Containers                                             | [View](lab/exp1/)     |
+| 2  | Docker Installation & Container Lifecycle                                  | [View](lab/exp2/)     |
+| 3  | Deploying NGINX Using Different Base Images                                | [View](lab/exp3/)     |
+| 4  | Docker Optimization, Inspection & Publishing                               | [View](lab/exp4/)     |
+| 5  | Docker Volumes, Environment Variables, Monitoring & Networks               | [View](lab/exp5/)     |
+| 6  | Docker Compose                                                             | [View](lab/exp6/)     |
+| 7  | CI/CD Demo App                                                             | [View](lab/exp7/)     |
+| 9  | Ansible                                                                    | [View](lab/exp9/)     |
+| 10 | SonarQube                                                                  | [View](lab/sonarqube-exp10/) |
+| 11 | Orchestration using Docker Compose and Docker Swarm                        | [View](lab/exp11/)    |
+| 12 | Study and analyse container Orchestration using Kubernetes                 | [View](lab/exp12/)    |
 
-| # | Experiment | Link |
-|---|---|---|
-| 1 | Virtual Machines vs Containers | [View](lab/exp1/) |
-| 2 | Docker Installation & Container Lifecycle | [View](lab/exp2/) |
-| 3 | Deploying NGINX Using Different Base Images | [View](lab/exp3/) |
-| 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/) |
-| 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/) |
-| 6 | Docker Compose | [View](lab/exp6/) |
-|7| CI/CD Demo App| [View](lab/exp7/)|
-| 9 | Ansible | [View](lab/exp9/) |
-| 10 | SonarQube | [View](lab/sonarqube-exp10/) |
-| 11 | Orchestration using Docker Compose and Docker Swarm | [View](lab/exp11/) |
-| 12 | Study and analyse container Orchestration using Kubernetes | [View](lab/exp12/) |
----
+
 
 ## Projects
 
