@@ -37,36 +37,34 @@ This repository serves as the **master lab and class repository** for the subjec
 
 | Date | Link |
 |---|---|
-| 22 January | [View Notes](class/22jan/README.md) |
-| 23 January | [View Notes](class/23jan/README.md) |
-| 27 January | [View Notes](class/27jan/README.md) |
-| 28 January | [View Notes](class/28jan/README.md) |
+| 22 January | [View Notes](class/22jan/) |
+| 23 January | [View Notes](class/23jan/) |
+| 27 January | [View Notes](class/27jan/) |
+| 28 January | [View Notes](class/28jan/) |
 
 ### February
 
 | Date | Link |
 |---|---|
-| 4 February | [View Notes](class/4feb/README.md) |
-| 5 February | [View Notes](class/5feb/README.md) |
-| 6 February | [View Notes](class/6feb/README.md) |
-| 10 February | [View Notes](class/10feb/README.md) |
-| 11 February | [View Notes](class/11feb/README.md) |
-| 12 February | [View Notes](class/12feb/README.md) |
-| 18 February | [View Notes](class/18feb/README.md) |
-| 20 February | [View Notes](class/20feb/README.md) |
-| 25 February | [View Notes](class/25feb/README.md) |
-| 26 February | [View Notes](class/26feb/README.md) |
+| 4 February | [View Notes](class/4feb/) |
+| 5 February | [View Notes](class/5feb/) |
+| 6 February | [View Notes](class/6feb/) |
+| 10 February | [View Notes](class/10feb/) |
+| 11 February | [View Notes](class/11feb/) |
+| 12 February | [View Notes](class/12feb/) |
+| 18 February | [View Notes](class/18feb/) |
+| 20 February | [View Notes](class/20feb/) |
+| 25 February | [View Notes](class/25feb/) |
+| 26 February | [View Notes](class/26feb/) |
 
 ### March
 
 | Date | Link |
 |---|---|
-| 17 March | [View Notes](class/17march/README.md) |
-| 18 March | [View Notes](class/18march/README.md) |
-| 19 March | [View Notes](class/19%20march/README.md) |
-| 25 March | [View Notes](class/25%20march/README.md) |
-
----
+| 17 March | [View Notes](class/17march/) |
+| 18 March | [View Notes](class/18march/) |
+| 19 March | [View Notes](class/19march/) |
+| 25 March | [View Notes](class/25march/) |
 
 ## Experiments
 
@@ -74,15 +72,15 @@ Each experiment is organized in its own folder containing experiment-specific so
 
 | # | Experiment | Link |
 |---|---|---|
-| 1 | Virtual Machines vs Containers | [View](lab/exp1/README.md) |
-| 2 | Docker Installation & Container Lifecycle | [View](lab/exp2/README.md) |
-| 3 | Deploying NGINX Using Different Base Images | [View](lab/exp3/README.md) |
-| 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/README.md) |
-| 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/README.md) |
-| 6 | Docker Compose | [View](lab/exp6/README.md) |
-| 9 | Ansible | [View](lab/exp9/README.md) |
-| 10 | SonarQube | [View](lab/sonarqube-exp10/README.md) |
-| 11 | Orchestration using Docker Compose and Docker Swarm | [View](lab/exp11/README.md) |
+| 1 | Virtual Machines vs Containers | [View](lab/exp1/) |
+| 2 | Docker Installation & Container Lifecycle | [View](lab/exp2/) |
+| 3 | Deploying NGINX Using Different Base Images | [View](lab/exp3/) |
+| 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/) |
+| 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/) |
+| 6 | Docker Compose | [View](lab/exp6/) |
+| 9 | Ansible | [View](lab/exp9/) |
+| 10 | SonarQube | [View](lab/sonarqube-exp10/) |
+| 11 | Orchestration using Docker Compose and Docker Swarm | [View](lab/exp11/) |
 
 ---
 
