@@ -1,3 +1,8 @@
+---
+layout: default
+title: Containerization & DevOps Lab
+---
+
 # Containerization & DevOps Lab
 
 > *Master Repository for All Experiments*
