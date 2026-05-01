@@ -1,3 +1,7 @@
+---
+layout: default
+title: Experiment 2
+---
 # Docker Experiment 2 — Installation, Configuration & Container Lifecycle
 
 ## Overview
