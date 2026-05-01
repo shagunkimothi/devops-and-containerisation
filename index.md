@@ -75,6 +75,8 @@ Each experiment is organized in its own folder containing experiment-specific so
 | # | Experiment | Link |
 |---|---|---|
 | 1 | Virtual Machines vs Containers | [View](lab/exp1/README.md) |
+| 1 | Virtual Machines vs Containers | [View](./lab/exp1/README.md) |
+| 1 | Virtual Machines vs Containers | [View](./lab/exp1/) |
 | 2 | Docker Installation & Container Lifecycle | [View](lab/exp2/README.md) |
 | 3 | Deploying NGINX Using Different Base Images | [View](lab/exp3/README.md) |
 | 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/README.md) |
