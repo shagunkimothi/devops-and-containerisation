@@ -1,7 +1,4 @@
----
-layout: default
-title: Containerization & DevOps Lab
----
+
 
 # Containerization & DevOps Lab
 
