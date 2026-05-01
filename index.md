@@ -74,17 +74,15 @@ Each experiment is organized in its own folder containing experiment-specific so
 
 | # | Experiment | Link |
 |---|---|---|
-| 1 | Virtual Machines vs Containers | [View](lab/exp1/README.md) |
-| 1 | Virtual Machines vs Containers | [View](./lab/exp1/README.md) |
-| 1 | Virtual Machines vs Containers | [View](./lab/exp1/) |
-| 2 | Docker Installation & Container Lifecycle | [View](lab/exp2/README.md) |
-| 3 | Deploying NGINX Using Different Base Images | [View](lab/exp3/README.md) |
-| 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/README.md) |
-| 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/README.md) |
-| 6 | Docker Compose | [View](lab/exp6/README.md) |
-| 9 | Ansible | [View](lab/exp9/README.md) |
-| 10 | SonarQube | [View](lab/sonarqube-exp10/README.md) |
-| 11 | Orchestration using Docker Compose and Docker Swarm | [View](lab/exp11/README.md) |
+| 1 | Virtual Machines vs Containers | [View](lab/exp1/) |
+| 2 | Docker Installation & Container Lifecycle | [View](lab/exp2/) |
+| 3 | Deploying NGINX Using Different Base Images | [View](lab/exp3/) |
+| 4 | Docker Optimization, Inspection & Publishing | [View](lab/exp4/) |
+| 5 | Docker Volumes, Environment Variables, Monitoring & Networks | [View](lab/exp5/) |
+| 6 | Docker Compose | [View](lab/exp6/) |
+| 9 | Ansible | [View](lab/exp9/) |
+| 10 | SonarQube | [View](lab/sonarqube-exp10/) |
+| 11 | Orchestration using Docker Compose and Docker Swarm | [View](lab/exp11/) |
 
 ---
 
