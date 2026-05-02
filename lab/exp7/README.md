@@ -57,14 +57,17 @@ A declarative pipeline with four stages:
 
 ## Images
 
-You can link project screenshots or diagrams using Markdown image syntax. Example:
+### Jenkins Startup
+![Jenkins startup](./1.png)
 
-- `![Jenkins startup](1.png)`
-- `![Jenkins plugin list](2.png)`
-- `![Initial admin password](3.png)`
-- `![Jenkins dashboard](4.png)`
+### Plugin Installation
+![Jenkins plugin list](./2.png)
 
+### Initial Admin Password
+![Initial admin password](./3.png)
 
+### Jenkins Dashboard
+![Jenkins dashboard](./4.png)
 
 
 ## Setup
