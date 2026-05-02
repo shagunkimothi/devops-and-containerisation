@@ -276,11 +276,20 @@ docker compose -f "Part D/Task 5/docker-compose.yml" down -v
 ## Image Gallery
 The following images document the lab execution and results:
 
-- `step 1.png` — nginx `docker run` setup
-- `step 2.png` — nginx `docker-compose` setup
-- `part B.png` — WordPress/MySQL Compose result
-- `using docker run.png` — WordPress/MySQL using `docker run`
-- `task 5.1.png` — Part D persistent volume outcome
+### nginx docker run setup
+![Step 1](./step%201.png)
+
+### nginx docker-compose setup
+![Step 2](./step%202.png)
+
+### WordPress/MySQL Compose result
+![Part B](./part%20B.png)
+
+### WordPress/MySQL using docker run
+![Docker Run](./using%20docker%20run.png)
+
+### Persistent volume outcome
+![Task 5.1](./task%205.1.png)
 
 ---
 
